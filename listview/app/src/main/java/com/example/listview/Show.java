@@ -8,6 +8,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 public class Show extends AppCompatActivity {
+    private String begin="there is him/her information";
 
     private int[] imageId = new int[]{R.mipmap.ic_stu_01, R.mipmap.ic_stu_02, R.mipmap.ic_stu_03, R.mipmap.ic_stu_04,
             R.mipmap.ic_stu_05, R.mipmap.ic_stu_06, R.mipmap.ic_stu_07, R.mipmap.ic_stu_08, R.mipmap.ic_stu_09, R.mipmap.ic_stu_10, R.mipmap.ic_stu_11,
@@ -32,16 +33,17 @@ public class Show extends AppCompatActivity {
         position = i.getIntExtra("position",0);
         imageView = findViewById(R.id.img);
         textView =  findViewById(R.id.na);
-        textViewId =  findViewById(R.id.speack);
+        textViewId =  findViewById(R.id.spe);
+
+
 
         switch (position){
             default:
                 imageView.setImageResource(imageId[position-1]);
                 textView.setText( CQUId[position-1]);
-                textViewId.setText(textViewId.getText().toString());
+                textViewId.setText(textViewId.getText().toString()+begin);
                 break;
         }
-
 
     }
 }

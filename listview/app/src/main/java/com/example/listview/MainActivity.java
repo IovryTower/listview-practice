@@ -23,7 +23,6 @@ public class MainActivity extends AppCompatActivity {
     private Context mContext;
     private StuAdapter mAdapter = null;
     private ListView list_animal;
-    private LinearLayout ly_content;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -31,7 +30,6 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         mContext = MainActivity.this;
         list_animal = (ListView) findViewById(R.id.list_stu);
-        //动态加载顶部View和底部View
         final LayoutInflater inflater = LayoutInflater.from(this);
         View headView = inflater.inflate(R.layout.view_header, null, false);
         View footView = inflater.inflate(R.layout.view_footer, null, false);
@@ -78,7 +76,6 @@ public class MainActivity extends AppCompatActivity {
         list_animal.addHeaderView(headView);
         list_animal.addFooterView(footView);
 
-
         list_animal.setAdapter(mAdapter);
         list_animal.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
@@ -95,11 +92,6 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-
-
-
     }
-
-
 
 }
